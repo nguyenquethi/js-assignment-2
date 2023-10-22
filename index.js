@@ -106,3 +106,43 @@ function calElectric () {
 }
 
 document.getElementById('btnBillAmount').onclick = calElectric;
+
+// ex-3
+function calTax () {
+    var revenue = document.getElementById('revenueInput').value * 1;
+    var amountTax;
+    if (revenue <= 60e+6) {
+        amountTax = revenue * 0.05;
+        console.log("1");
+    }
+    else if (60e+6 < revenue  && revenue <= 120e+6) {
+        amountTax = revenue * 0.1;
+    }
+    else if (120e+6 < revenue && revenue <= 210e+6) {
+        amountTax = revenue * 0.15;
+        console.log("3")
+    } 
+    else if (210e+6 < revenue && revenue <= 384e+6) {
+        amountTax = revenue * 0.2;
+        console.log("4")
+    }
+    else if (384e+6 < revenue && revenue <= 624e+6) {
+        amountTax = revenue * 0.25;
+        console.log("5")
+    } 
+    else if (624e+6 < revenue && revenue <= 960e+6) {
+        amountTax  = revenue * 0.3;
+        console.log("6")
+    }
+    else if (revenue > 935e+6){
+        amountTax = revenue * 0.35;
+        console.log("7")
+    };
+
+    document.getElementById('taxResult').innerHTML = `The Total tax is ${amountTax.toLocaleString("it-IT", {
+        currency: 'VND',
+        style: 'currency',
+    })
+    }`;
+}
+document.getElementById('btnTaxAmount').onclick = calTax;
