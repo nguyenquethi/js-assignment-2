@@ -165,21 +165,16 @@ function myFunction() {
     if (input == 'Individual') {
         indivFee = RECEIPT + BASICFEE * connectNum + SUBCRIBER * channelNum;
 
-        console.log('indi');
-
-        // document.getElementById('channelResult').innerHTML = `the total amount is ${indivFee}`;
-    }else if (input == 'Business') {
+        document.getElementById('channelResult').innerHTML = `the total amount is ${indivFee}`;
+    } else if (input == 'Business') {
         if (connectNum <= 10){
             busFee = RECEIPTBUS + BASICFEEBUSFOR10 * connectNum + SUBCRIBERBUS * channelNum;
         } else {
             // var connectionFee = BASICFEEBUSFOR10 + (connectNum - 10) * 5;
             busFee = RECEIPTBUS + (BASICFEEBUSFOR10 + (connectNum - 10) * 5) + SUBCRIBERBUS * channelNum;
         }
-
-        // document.getElementById('channelResult').innerHTML = `the total amount is ${busFee}`;
-    }
-
-    document.getElementById('channelResult').innerHTML = `the total amount is ${indivFee}`;
+        document.getElementById('channelResult').innerHTML = `the total amount is ${busFee}`;
+    } 
 }
 
 document.getElementById('btnChannelAmount').onclick = myFunction;
