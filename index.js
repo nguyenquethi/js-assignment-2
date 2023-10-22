@@ -146,3 +146,40 @@ function calTax () {
     }`;
 }
 document.getElementById('btnTaxAmount').onclick = calTax;
+
+// ex-4
+const RECEIPT = 4.5;
+const BASICFEE = 20.5;
+const SUBCRIBER = 7.5;
+
+const RECEIPTBUS = 15;
+const BASICFEEBUSFOR10 = 75;
+const SUBCRIBERBUS = 50;
+function myFunction() {
+    var input = document.getElementById('mySelect').value;
+    console.log(input);
+    var connectNum = document.getElementById('connectNum').value * 1;
+    var channelNum = document.getElementById('channelNum').value * 1;
+    var indivFee;
+    var busFee;
+    if (input == 'Individual') {
+        indivFee = RECEIPT + BASICFEE * connectNum + SUBCRIBER * channelNum;
+
+        console.log('indi');
+
+        // document.getElementById('channelResult').innerHTML = `the total amount is ${indivFee}`;
+    }else if (input == 'Business') {
+        if (connectNum <= 10){
+            busFee = RECEIPTBUS + BASICFEEBUSFOR10 * connectNum + SUBCRIBERBUS * channelNum;
+        } else {
+            // var connectionFee = BASICFEEBUSFOR10 + (connectNum - 10) * 5;
+            busFee = RECEIPTBUS + (BASICFEEBUSFOR10 + (connectNum - 10) * 5) + SUBCRIBERBUS * channelNum;
+        }
+
+        // document.getElementById('channelResult').innerHTML = `the total amount is ${busFee}`;
+    }
+
+    document.getElementById('channelResult').innerHTML = `the total amount is ${indivFee}`;
+}
+
+document.getElementById('btnChannelAmount').onclick = myFunction;

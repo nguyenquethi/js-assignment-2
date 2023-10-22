@@ -81,6 +81,27 @@
         <button id="btnTaxAmount" class="btn btn-dark">Calculate Tax</button>
         <div class="bg-success text-white p-3 mt-3" id="taxResult"></div>
       </div>
+      <br><br><br>
+
+      <div class="container">
+        <h2>Ex-4: Calculate Channel TV Money</h2>
+        <div class="mb-3">
+        <p>Select user type from the list.</p>
+          <select id="mySelect" onchange="myFunction()">
+            <option value="Individual">Individual</option>
+            <option value="Business">Business</option>
+          </select>
+          
+          <label for="" class="form-label">Number of connection</label>
+          <input type="text" class="form-control" name="" id="connectNum">
+
+          <label for="" class="form-label">Number of channel</label>
+          <input type="text" class="form-control" name="" id="channelNum">
+
+          <button id="btnChannelAmount" class="btn btn-dark">Calculate Amount</button>
+        <div class="bg-success text-white p-3 mt-3" id="channelResult"></div>
+        </div>  
+      </div>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
